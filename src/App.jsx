@@ -1,17 +1,16 @@
-import "./App.css";
+import React from "react";
+import Hero from "./components/Hero";
 import About from "./components/About";
+import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-import Home from "./components/Home";
-import NavBar from "./components/NavBar";
-import Works from "./components/Works";
+
 function App() {
   return (
-    <div className="App">
-      <NavBar />
-      <Home />
+    <div className="min-h-screen">
+      <Hero />
       <About />
-      <Works />
+      <Projects />
       <Contact />
       <Footer />
     </div>
