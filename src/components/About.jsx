@@ -13,7 +13,7 @@ export default function About() {
     <SectionWrap
       id="about"
       title="What I Do"
-      text="I create responsive and engaging websites while designing intuitive user interfaces that enhance user experiences. My work blends web development with UI/UX design, focusing on functionality, aesthetics, and delivering seamless digital solutions tailored to users' needs."
+      text="I build responsive and engaging websites and mobile apps, crafting intuitive user interfaces that elevate the user experience. My work combines full-stack web development with thoughtful UI/UX design, ensuring functionality, performance, and visual appeal. With expertise in React.js, React Native, Node.js, MySQL, and modern tools like Tailwind CSS, Docker, and AWS, I deliver seamless, scalable digital solutions tailored to real-world needs — from local e-commerce platforms to mobile service-booking systems."
       className="bg-gray-50"
     >
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
