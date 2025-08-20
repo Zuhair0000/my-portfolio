@@ -6,6 +6,8 @@ import SectionWrap from "./SectionWrap";
 import HomePage from "../assets/Home.png";
 import souqyemen from "../assets/souqyemen.png";
 import carwash from "../assets/carwash.png";
+import mini_ecommerce from "../assets/mini_ecommerce.png";
+import ToDoApp from "../assets/todo.jpeg";
 
 const projects = [
   {
@@ -45,6 +47,26 @@ const projects = [
     technologies: ["React", "Node.js", "MySQL", "JWT", "Tailwind CSS"],
     githubUrl: "https://github.com/Zuhair0000/Simple_Blog_App",
     category: "Full Stack",
+  },
+  {
+    id: 4,
+    title: "Mini e-commerce",
+    description:
+      "A full-stack mini e-commerce application with JWT-based authentication, product CRUD functionality, and an admin dashboard for managing products. Built to practice React, Node.js, and MySQL full-stack development.",
+    image: mini_ecommerce,
+    technologies: ["React", "Node.js", "MySQL", "JWT", "Tailwind CSS"],
+    githubUrl: "https://github.com/Zuhair0000/mini-ecommerce",
+    category: "Full Stack",
+  },
+  {
+    id: 4,
+    title: "Simple To-Do Mobile App",
+    description:
+      "A mobile app built with React Native that allows users to manage tasks easily. Users can add new tasks, mark them as done, and delete them when no longer needed. Designed to practice the fundamentals of mobile development and state management.",
+    image: ToDoApp,
+    technologies: ["React Native"],
+    githubUrl: "https://github.com/Zuhair0000/Simple-ToDo-App",
+    category: "Mobile App",
   },
 ];
 
