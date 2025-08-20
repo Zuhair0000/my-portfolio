@@ -159,7 +159,7 @@ export default function Projects() {
         data-aos-delay="600"
       >
         <a
-          href=""
+          href="https://github.com/Zuhair0000"
           className="inline-flex items-center gap-2 bg-gradient-to-r from-teal-500 to-indigo-500 hover:from-teal-600 hover:to-indigo-600 text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25 transform hover:-translate-y-1"
         >
           View All Projects
