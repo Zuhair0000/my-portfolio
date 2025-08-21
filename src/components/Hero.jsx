@@ -51,7 +51,7 @@ export default function Hero() {
               <Github className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
             </a>
             <a
-              href="www.linkedin.com/in/zuhairhassan52"
+              href="https://www.linkedin.com/in/zuhairhassan52/"
               className="w-12 h-12 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full flex items-center justify-center hover:bg-white/20 transition-all duration-300 group"
             >
               <Linkedin className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
