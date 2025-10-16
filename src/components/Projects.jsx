@@ -8,6 +8,7 @@ import souqyemen from "../assets/souqyemen.png";
 import carwash from "../assets/carwash.png";
 import mini_ecommerce from "../assets/mini_ecommerce.png";
 import ToDoApp from "../assets/todo.jpeg";
+import narrativeStudio from "../assets/Narrative.png";
 
 const projects = [
   {
@@ -59,7 +60,7 @@ const projects = [
     category: "Full Stack",
   },
   {
-    id: 4,
+    id: 5,
     title: "Simple To-Do Mobile App",
     description:
       "A mobile app built with React Native that allows users to manage tasks easily. Users can add new tasks, mark them as done, and delete them when no longer needed. Designed to practice the fundamentals of mobile development and state management.",
@@ -67,6 +68,24 @@ const projects = [
     technologies: ["React Native"],
     githubUrl: "https://github.com/Zuhair0000/Simple-ToDo-App",
     category: "Mobile App",
+  },
+  {
+    id: 6,
+    title: "Narrative Studio - AI Story Generator",
+    description:
+      "A full-stack AI-powered story generation platform that allows users to create unique stories using OpenAI's API. Includes JWT-based authentication, credit-based usage system, PayPal integration for purchasing credits, and real-time credit updates. Built with a focus on smooth UX and secure backend operations.",
+    image: narrativeStudio,
+    technologies: [
+      "React",
+      "Node.js",
+      "MySQL",
+      "JWT",
+      "Tailwind CSS",
+      "OpenAI API",
+      "PayPal API",
+    ],
+    githubUrl: "https://github.com/Zuhair0000/Narrative-Studio",
+    category: "Full Stack",
   },
 ];
 
