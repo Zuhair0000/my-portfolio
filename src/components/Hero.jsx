@@ -25,7 +25,7 @@ export default function Hero() {
         autoPlay
         className="absolute h-full w-full inset-0 object-cover"
       >
-        <source src="/public/video/bg2.mp4" type="video/mp4" />
+        <source src="/video/bg2.mp4" type="video/mp4" />
       </video>
 
       <div className="absolute inset-0 bg-black/60 "></div>
