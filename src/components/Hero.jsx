@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowDown, Github, Linkedin } from "lucide-react";
 import Aos from "aos";
 import "aos/dist/aos.css";
 
@@ -14,9 +14,21 @@ export default function Hero() {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-indigo-900 to-teal-900 text-white relative overflow-hidden">
+    <section className="min-h-screen flex items-center justify-center text-white relative overflow-hidden">
       {/* Background decoration */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-teal-400/10 via-transparent to-transparent"></div>
+      {/* <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-teal-400/10 via-transparent to-transparent"></div> */}
+
+      <video
+        loop
+        muted
+        playsInline
+        autoPlay
+        className="absolute h-full w-full inset-0 object-cover"
+      >
+        <source src="/public/video/bg2.mp4" type="video/mp4" />
+      </video>
+
+      <div className="absolute inset-0 bg-black/60 "></div>
 
       <div className="max-w-6xl mx-auto px-4 md:px-8 text-center relative z-10">
         <div data-aos="fade-up">
