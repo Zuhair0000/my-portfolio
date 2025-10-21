@@ -28,7 +28,7 @@ export default function Hero() {
         <source src="/video/bg2.mp4" type="video/mp4" />
       </video>
 
-      <div className="absolute inset-0 bg-black/60 "></div>
+      <div className="absolute inset-0 bg-black/40 "></div>
 
       <div className="max-w-6xl mx-auto px-4 md:px-8 text-center relative z-10">
         <div data-aos="fade-up">
@@ -72,7 +72,7 @@ export default function Hero() {
         </div>
 
         <div
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce cursor-pointer"
+          className="absolute left-1/2 transform -translate-x-1/2 animate-bounce cursor-pointer"
           onClick={() => scrollToSection("about")}
           data-aos="fade-up"
           data-aos-delay="1000"
