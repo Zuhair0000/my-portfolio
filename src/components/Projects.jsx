@@ -278,8 +278,8 @@ export default function Projects() {
 
       {isOpen && (
         <div className="fixed inset-0 z-50 flex items-center bg-black/70 justify-center backdrop-blur-2xl overflow-auto py-10 text-white">
-          <div className="relative border p-6 sm:-8 border-white w-[85%] my-auto rounded-2xl">
-            <div className="flex overflow-x-auto gap-4">
+          <div className="relative border p-6 sm:p-8 border-white w-[85%] my-auto rounded-2xl">
+            <div className="flex overflow-x-auto gap-4  hide-scrollbar">
               {formData.images.map((image, index) => (
                 <img
                   src={image}
@@ -291,7 +291,7 @@ export default function Projects() {
             <div className="text-center my-5">
               <h1 className="text-3xl font-bold mb-5">{formData.title}</h1>
               <p className="text-lg">{formData.description}</p>
-              <div className="flex flex-wrap gap-2 my-4 justify-center items-center hide-scrollbar">
+              <div className="flex flex-wrap gap-2 my-4 justify-center items-center">
                 {formData.technologies.map((tech, techIndex) => (
                   <span
                     key={techIndex}
