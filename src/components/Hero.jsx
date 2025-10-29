@@ -2,6 +2,12 @@ import { useEffect } from "react";
 import { ArrowDown, Github, Linkedin } from "lucide-react";
 import Aos from "aos";
 import "aos/dist/aos.css";
+import {
+  animate,
+  motion,
+  useMotionTemplate,
+  useMotionValue,
+} from "framer-motion";
 
 export default function Hero() {
   useEffect(() => {
@@ -13,12 +19,29 @@ export default function Hero() {
     element?.scrollIntoView({ behavior: "smooth" });
   };
 
-  return (
-    <section className="min-h-screen flex items-center justify-center text-white relative overflow-hidden">
-      {/* Background decoration */}
-      {/* <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-teal-400/10 via-transparent to-transparent"></div> */}
+  const COLORS = ["#38BDF8", "#22D3EE", "#818CF8"];
+  const color = useMotionValue(COLORS[0]);
+  const backgroundImage = useMotionTemplate`radial-gradient(110% 140% at 50% 0%, #303234 50%, ${color})`;
+  const border = useMotionTemplate`1 solid ${color}`;
+  const boxShadow = useMotionTemplate`0px 4px 24px ${color}`;
 
-      <video
+  useEffect(() => {
+    animate(color, COLORS, {
+      ease: "easeInOut",
+      duration: 10,
+      repeat: Infinity,
+      repeatType: "mirror",
+    });
+  }, []);
+
+  return (
+    <motion.section
+      style={{
+        backgroundImage,
+      }}
+      className="min-h-screen flex items-center justify-center text-white relative overflow-hidden"
+    >
+      {/* <video
         loop
         muted
         playsInline
@@ -28,7 +51,7 @@ export default function Hero() {
         <source src="/video/bg2.mp4" type="video/mp4" />
       </video>
 
-      <div className="absolute inset-0 bg-black/40 "></div>
+      <div className="absolute inset-0 bg-black/40 "></div> */}
 
       <div className="max-w-6xl mx-auto px-4 md:px-8 text-center relative z-10">
         <div data-aos="fade-up">
@@ -41,18 +64,22 @@ export default function Hero() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-            <button
+            <motion.button
               onClick={() => scrollToSection("projects")}
               className="bg-gradient-to-r from-teal-500 to-indigo-500 hover:from-teal-600 hover:to-indigo-600 text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-teal-500/25 transform hover:-translate-y-1"
             >
               View My Work
-            </button>
-            <button
+            </motion.button>
+            <motion.button
+              style={{
+                border,
+                boxShadow,
+              }}
               onClick={() => scrollToSection("contact")}
               className="border-2 border-white/30 hover:border-white text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 hover:bg-white/10 backdrop-blur-sm"
             >
               Get In Touch
-            </button>
+            </motion.button>
           </div>
 
           <div className="flex justify-center gap-6 mb-12">
@@ -80,6 +107,6 @@ export default function Hero() {
           <ArrowDown className="w-6 h-6 text-white/70" />
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
