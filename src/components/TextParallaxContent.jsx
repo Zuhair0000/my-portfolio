@@ -24,14 +24,18 @@ export default function TextParallaxContent({
 }
 
 const OverlayCopy = ({ heading, subheading, target }) => {
-  const targetRef = useRef(null);
+  const isMobile = window.innerWidth < 768;
 
   const { scrollYProgress } = useScroll({
     target,
     offset: ["start end", "end start"],
   });
 
-  const y = useTransform(scrollYProgress, [0, 1], [50, -500]);
+  const y = useTransform(
+    scrollYProgress,
+    [0, 1],
+    isMobile ? [100, -200] : [100, -300]
+  );
   const opacity = useTransform(
     scrollYProgress,
     [0.1, 0.3, 0.7, 0.9],
@@ -63,7 +67,7 @@ const StickyImage = ({ media }) => {
     offset: ["end end", "end start"],
   });
 
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.9]);
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.7]);
   const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
 
   const isVideo =
