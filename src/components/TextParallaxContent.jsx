@@ -10,12 +10,7 @@ export default function TextParallaxContent({
   children,
 }) {
   return (
-    <div
-      style={{
-        paddingLeft: IMG_PADDING,
-        paddingRight: IMG_PADDING,
-      }}
-    >
+    <div>
       <div>
         <div className="relative h-[100vh] flex flex-col justify-center items-center">
           <StickyImage media={image} />
@@ -79,7 +74,7 @@ const StickyImage = ({ media }) => {
         top: IMG_PADDING,
         scale,
       }}
-      className="sticky z-0 overflow-hidden rounded-3xl"
+      className="sticky z-0 overflow-hidden"
     >
       {isVideo ? (
         <video
