@@ -10,42 +10,44 @@ export default function TextParallaxContent({
   children,
 }) {
   const sectionRef = useRef(null);
+
   return (
     <section ref={sectionRef} className="relative h-[150vh]">
+      {/* Sticky image stays full height */}
       <StickyImage media={image} />
+
+      {/* Text moves and fades while image stays fixed */}
       <OverlayCopy
         heading={heading}
         subheading={subheading}
         target={sectionRef}
       />
+
       {children}
     </section>
   );
 }
 
 const OverlayCopy = ({ heading, subheading, target }) => {
-  const targetRef = useRef(null);
-
   const { scrollYProgress } = useScroll({
     target,
     offset: ["start end", "end start"],
   });
 
-  const y = useTransform(scrollYProgress, [0, 1], [50, -500]);
+  // Text enters & exits faster within the scroll
+  const y = useTransform(scrollYProgress, [0, 1], [200, -300]);
   const opacity = useTransform(
     scrollYProgress,
     [0.1, 0.3, 0.7, 0.9],
     [0, 1, 1, 0]
   );
+
   return (
     <motion.div
-      style={{
-        y,
-        opacity,
-      }}
-      className="absolute inset-0 flex  flex-col items-center justify-center text-white pointer-events-none"
+      style={{ y, opacity }}
+      className="absolute inset-0 flex flex-col items-center justify-center text-white pointer-events-none"
     >
-      <p className="mb-2 text-center text-4xl md:mb-4 md:text-7xl font-bold bg-gradient-to-r  from-teal-400 via-cyan-400 to-indigo-400 text-transparent bg-clip-text">
+      <p className="mb-2 text-center text-4xl md:mb-4 md:text-7xl font-bold bg-gradient-to-r from-teal-400 via-cyan-400 to-indigo-400 text-transparent bg-clip-text">
         {heading}
       </p>
       <p className="mb-2 text-center text-xl md:mb-4 md:text-3xl">
@@ -63,12 +65,14 @@ const StickyImage = ({ media }) => {
     offset: ["end end", "end start"],
   });
 
+  // image slowly scales/fades out
   const scale = useTransform(scrollYProgress, [0, 1], [1, 0.9]);
   const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
 
   const isVideo =
     typeof media === "string" &&
     (media.endsWith(".mp4") || media.endsWith(".webm"));
+
   return (
     <motion.div
       ref={targetRef}
@@ -78,7 +82,7 @@ const StickyImage = ({ media }) => {
         top: IMG_PADDING,
         scale,
       }}
-      className="sticky z-0 overflow-hidden"
+      className="sticky z-0 overflow-hidden rounded-3xl"
     >
       {isVideo ? (
         <video
@@ -101,9 +105,7 @@ const StickyImage = ({ media }) => {
         />
       )}
       <motion.div
-        style={{
-          opacity,
-        }}
+        style={{ opacity }}
         className="absolute inset-0 bg-neutral-950/60"
       />
     </motion.div>
