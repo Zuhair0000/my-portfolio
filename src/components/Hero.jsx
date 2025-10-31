@@ -52,10 +52,7 @@ export default function Hero() {
       style={{ scale, opacity }}
       className="min-h-screen flex items-center justify-center text-white relative overflow-hidden"
     >
-      <img
-        src="/src/assets/bg4.png"
-        className="absolute w-full h-full object-cover"
-      />
+      <img src="bg4.png" className="absolute w-full h-full object-cover" />
 
       <div className="absolute inset-0 bg-black/60 "></div>
 
