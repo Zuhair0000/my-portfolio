@@ -60,7 +60,7 @@ export default function Hero() {
         style={{
           y,
         }}
-        className="max-w-6xl mx-3 md:mx-auto px-4 md:px-8 text-center mt-70 md:mt-7 backdrop-blur-2xl rounded-2xl relative z-10"
+        className="max-w-6xl mx-3 md:mx-auto px-4 md:px-8 text-center my-40 md:my-7 backdrop-blur-2xl rounded-2xl relative z-10"
       >
         <div data-aos="fade-up">
           <h1 className="text-5xl mt-10 md:text-7xl font-bold mb-6 bg-gradient-to-r from-teal-400 via-cyan-400 to-indigo-400 bg-clip-text text-transparent drop-shadow-lg">
