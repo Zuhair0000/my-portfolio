@@ -52,18 +52,18 @@ export default function Hero() {
       style={{ scale, opacity }}
       className="min-h-screen flex items-center justify-center text-white relative overflow-hidden"
     >
-      <img src="bg4.png" className="absolute w-full h-full object-cover" />
+      <img src="/bg.png" className="absolute w-full h-full object-cover" />
 
-      <div className="absolute inset-0 bg-black/60 "></div>
+      <div className="absolute inset-0 bg-black/40 backdrop-blur-xs"></div>
 
       <motion.div
         style={{
           y,
         }}
-        className="max-w-6xl mx-auto px-4 md:px-8 text-center mt-70 md:mt-1 relative z-10"
+        className="max-w-6xl mx-3 md:mx-auto px-4 md:px-8 text-center mt-70 md:mt-7 backdrop-blur-2xl rounded-2xl relative z-10"
       >
         <div data-aos="fade-up">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-teal-400 via-cyan-400 to-indigo-400 bg-clip-text text-transparent drop-shadow-lg">
+          <h1 className="text-5xl mt-10 md:text-7xl font-bold mb-6 bg-gradient-to-r from-teal-400 via-cyan-400 to-indigo-400 bg-clip-text text-transparent drop-shadow-lg">
             ZUHAIR AHMED
           </h1>
           <p className="text-xl md:text-2xl text-white mb-8 max-w-2xl mx-auto leading-relaxed">
