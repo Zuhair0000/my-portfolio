@@ -34,7 +34,7 @@ const OverlayCopy = ({ heading, subheading, target }) => {
   const y = useTransform(
     scrollYProgress,
     [0, 1],
-    isMobile ? [100, -200] : [100, -300]
+    isMobile ? [100, -200] : [50, -300]
   );
   const opacity = useTransform(
     scrollYProgress,

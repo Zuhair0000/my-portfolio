@@ -13,10 +13,10 @@ export default function About() {
     <SectionWrap
       id="about"
       title="What I Do"
-      text="I build responsive and engaging websites and mobile apps, crafting intuitive user interfaces that elevate the user experience. My work combines full-stack web development with thoughtful UI/UX design, ensuring functionality, performance, and visual appeal. With expertise in React.js, React Native, Node.js, MySQL, and modern tools like Tailwind CSS, Docker, and AWS, I deliver seamless, scalable digital solutions tailored to real-world needs — from local e-commerce platforms to mobile service-booking systems."
+      text="I build responsive and engaging websites, crafting intuitive user interfaces that elevate the user experience. My work combines full-stack web development with thoughtful UI/UX design, ensuring functionality, performance, and visual appeal. With expertise in React.js, Node.js, MySQL, and modern tools like Tailwind CSS, Docker, and AWS, I deliver seamless, scalable digital solutions tailored to real-world needs — from local e-commerce platforms to mobile service-booking systems."
       className="bg-gray-50"
     >
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
+      <div className="grid md:grid-cols-2  gap-8 lg:gap-12">
         <div
           className="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
           data-aos="fade-up"
@@ -55,7 +55,7 @@ export default function About() {
           </div>
         </div>
 
-        <div
+        {/* <div
           className="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
           data-aos="fade-up"
           data-aos-delay="300"
@@ -73,7 +73,7 @@ export default function About() {
               platforms.
             </p>
           </div>
-        </div>
+        </div> */}
       </div>
     </SectionWrap>
   );

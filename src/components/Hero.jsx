@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { ArrowDown, Github, Linkedin } from "lucide-react";
 import Aos from "aos";
 import "aos/dist/aos.css";
@@ -7,6 +7,8 @@ import {
   motion,
   useMotionTemplate,
   useMotionValue,
+  useScroll,
+  useTransform,
 } from "framer-motion";
 
 export default function Hero() {
@@ -21,7 +23,7 @@ export default function Hero() {
 
   const COLORS = ["#38BDF8", "#22D3EE", "#818CF8"];
   const color = useMotionValue(COLORS[0]);
-  const backgroundImage = useMotionTemplate`radial-gradient(110% 140% at 50% 0%, #303234 50%, ${color})`;
+  // const backgroundImage = useMotionTemplate`radial-gradient(110% 140% at 50% 0%, #303234 50%, ${color})`;
   const border = useMotionTemplate`1 solid ${color}`;
   const boxShadow = useMotionTemplate`0px 4px 24px ${color}`;
 
@@ -34,33 +36,42 @@ export default function Hero() {
     });
   }, []);
 
+  const target = useRef(null);
+
+  const { scrollYProgress } = useScroll({
+    target,
+    offset: ["end end", "end start"],
+  });
+  const y = useTransform(scrollYProgress, [0, 1], [0, -500]);
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.7]);
+  const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
+
   return (
     <motion.section
-      style={{
-        backgroundImage,
-      }}
+      ref={target}
+      style={{ scale, opacity }}
       className="min-h-screen flex items-center justify-center text-white relative overflow-hidden"
     >
-      {/* <video
-        loop
-        muted
-        playsInline
-        autoPlay
-        className="absolute h-full w-full inset-0 object-cover"
+      <img
+        src="/src/assets/bg4.png"
+        className="absolute w-full h-full object-cover"
+      />
+
+      <div className="absolute inset-0 bg-black/60 "></div>
+
+      <motion.div
+        style={{
+          y,
+        }}
+        className="max-w-6xl mx-auto px-4 md:px-8 text-center mt-70 md:mt-1 relative z-10"
       >
-        <source src="/video/bg2.mp4" type="video/mp4" />
-      </video>
-
-      <div className="absolute inset-0 bg-black/40 "></div> */}
-
-      <div className="max-w-6xl mx-auto px-4 md:px-8 text-center relative z-10">
         <div data-aos="fade-up">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-teal-400 via-cyan-400 to-indigo-400 bg-clip-text text-transparent drop-shadow-lg">
             ZUHAIR AHMED
           </h1>
-          <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed">
-            Full-Stack Developer, App Developer & UI/UX Designer creating
-            digital experiences that matter
+          <p className="text-xl md:text-2xl text-white mb-8 max-w-2xl mx-auto leading-relaxed">
+            Full-Stack Developer & UI/UX Designer creating digital experiences
+            that matter
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
@@ -106,7 +117,7 @@ export default function Hero() {
         >
           <ArrowDown className="w-6 h-6 text-white/70" />
         </div>
-      </div>
+      </motion.div>
     </motion.section>
   );
 }
