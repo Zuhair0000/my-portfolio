@@ -23,7 +23,6 @@ export default function Contact() {
         .then(
           () => {
             console.log("SUCCESS!");
-            // Reset form after successful submission
             form.current?.reset();
           },
           (error) => {
