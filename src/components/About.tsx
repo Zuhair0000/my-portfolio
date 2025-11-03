@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { Code, Palette, Smartphone } from "lucide-react";
 import Aos from "aos";
 import "aos/dist/aos.css";
-import SectionWrap from "./SectionWrap";
+import SectionWrap from "./SectionWrap.js";
 
 export default function About() {
   useEffect(() => {
