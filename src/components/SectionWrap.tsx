@@ -1,4 +1,14 @@
-const SectionWrap = ({ id, title, text, children, className = "" }) => {
+import type { ReactNode } from "react";
+
+type props = {
+  id: string;
+  title: string;
+  text: string;
+  children: ReactNode;
+  className: string;
+};
+
+const SectionWrap = ({ id, title, text, children, className = "" }: props) => {
   return (
     <section id={id} className={`py-20 px-4 md:px-8 ${className}`}>
       <div className="max-w-6xl mx-auto">

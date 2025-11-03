@@ -1,15 +1,31 @@
-import React, { useRef } from "react";
+import React, { useRef, type ReactNode } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 const IMG_PADDING = 12;
+
+type props = {
+  image: string;
+  subheading: string;
+  heading: string;
+  children: ReactNode;
+};
+
+type props2 = {
+  heading: string;
+  subheading: string;
+  target: React.RefObject<HTMLInputElement>;
+};
+type props3 = {
+  media: string;
+};
 
 export default function TextParallaxContent({
   image,
   subheading,
   heading,
   children,
-}) {
-  const sectionRef = useRef(null);
+}: props) {
+  const sectionRef = useRef<HTMLInputElement | null>(null);
   return (
     <section ref={sectionRef} className="relative h-[150vh]">
       <StickyImage media={image} />
@@ -23,7 +39,7 @@ export default function TextParallaxContent({
   );
 }
 
-const OverlayCopy = ({ heading, subheading, target }) => {
+const OverlayCopy = ({ heading, subheading, target }: props2) => {
   const isMobile = window.innerWidth < 768;
 
   const { scrollYProgress } = useScroll({
@@ -59,7 +75,7 @@ const OverlayCopy = ({ heading, subheading, target }) => {
   );
 };
 
-const StickyImage = ({ media }) => {
+const StickyImage = ({ media }: props3) => {
   const targetRef = useRef(null);
 
   const { scrollYProgress } = useScroll({

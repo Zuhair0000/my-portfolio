@@ -1,18 +1,18 @@
-import { useRef, useEffect } from "react";
+import React, { useRef, useEffect } from "react";
 import { Send, Mail, MessageCircle, User } from "lucide-react";
 import emailjs from "@emailjs/browser";
 import Aos from "aos";
 import "aos/dist/aos.css";
-import SectionWrap from "./SectionWrap";
+import SectionWrap from "./SectionWrap.js";
 
 export default function Contact() {
-  const form = useRef(null);
+  const form = useRef<HTMLFormElement | null>(null);
 
   useEffect(() => {
     Aos.init({ duration: 800, once: true, startEvent: "DOMContentLoaded" });
   }, []);
 
-  const sendEmail = (e) => {
+  const sendEmail = (e: React.FormEvent<HTMLInputElement>) => {
     e.preventDefault();
 
     if (form.current) {
@@ -42,7 +42,7 @@ export default function Contact() {
       <div className="max-w-2xl mx-auto">
         <form
           ref={form}
-          onSubmit={sendEmail}
+          onSubmit={(e) => sendEmail}
           className="space-y-6"
           data-aos="fade-up"
         >
