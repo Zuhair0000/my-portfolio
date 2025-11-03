@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { ExternalLink, Github } from "lucide-react";
 import Aos from "aos";
 import "aos/dist/aos.css";
-import SectionWrap from "./SectionWrap";
+import SectionWrap from "./SectionWrap.js";
 import HomePage from "../assets/Home.png";
 import souqyemen from "../assets/souqyemen.png";
 import carwash from "../assets/carwash.png";
@@ -148,39 +148,35 @@ const projects = [
   },
 ];
 
+type Project = {
+  id: number;
+  title: string;
+  description: string;
+  image: string;
+  images: string[];
+  technologies: string[];
+  githubUrl: string;
+  category: string;
+};
+
 export default function Projects() {
-  const [formData, setFormData] = useState({
-    id: "",
-    title: "",
-    description: "",
-    image: "",
-    images: [],
-    technologies: [],
-    githubUrl: "",
-    category: "",
-  });
+  const [formData, setFormData] = useState<Project | null>(null);
   const [isOpen, setIsopen] = useState(false);
   useEffect(() => {
     Aos.init({ duration: 800, once: true });
   }, []);
 
-  const handleModal = (e, item) => {
+  const handleModal = (
+    e: React.MouseEvent<HTMLDivElement | null>,
+    item: Project
+  ) => {
     e.preventDefault();
     setIsopen(true);
     setFormData({ ...item });
   };
   const handleCloseModal = () => {
     setIsopen(false);
-    setFormData({
-      id: "",
-      title: "",
-      description: "",
-      image: "",
-      images: [],
-      technologies: [],
-      githubUrl: "",
-      category: "",
-    });
+    setFormData(null);
   };
 
   return (
@@ -280,7 +276,7 @@ export default function Projects() {
         <div className="fixed inset-0 z-50 flex items-center bg-black/70 justify-center backdrop-blur-2xl overflow-auto py-10 text-white">
           <div className="relative border p-6 sm:p-8 border-white w-[85%] my-auto rounded-2xl">
             <div className="flex overflow-x-auto gap-4  hide-scrollbar">
-              {formData.images.map((image, index) => (
+              {formData?.images.map((image, index) => (
                 <img
                   src={image}
                   key={index}
@@ -289,10 +285,10 @@ export default function Projects() {
               ))}
             </div>
             <div className="text-center my-5">
-              <h1 className="text-3xl font-bold mb-5">{formData.title}</h1>
-              <p className="text-lg">{formData.description}</p>
+              <h1 className="text-3xl font-bold mb-5">{formData?.title}</h1>
+              <p className="text-lg">{formData?.description}</p>
               <div className="flex flex-wrap gap-2 my-4 justify-center items-center">
-                {formData.technologies.map((tech, techIndex) => (
+                {formData?.technologies.map((tech, techIndex) => (
                   <span
                     key={techIndex}
                     className="bg-gradient-to-r from-teal-400 via-cyan-400 to-indigo-400 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-100 hover:text-blue-700 transition-colors duration-200 hover:animate-pulse"
