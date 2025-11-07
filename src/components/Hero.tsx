@@ -16,7 +16,7 @@ export default function Hero() {
     Aos.init({ duration: 800, once: true });
   }, []);
 
-  const scrollToSection = (sectionId) => {
+  const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     element?.scrollIntoView({ behavior: "smooth" });
   };
