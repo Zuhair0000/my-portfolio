@@ -7,7 +7,6 @@ import HomePage from "../assets/Home.png";
 import souqyemen from "../assets/souqyemen.png";
 import carwash from "../assets/carwash.png";
 import mini_ecommerce from "../assets/mini_ecommerce.png";
-import ToDoApp from "../assets/todo.jpeg";
 import narrativeStudio from "../assets/Narrative.png";
 import souq1 from "../assets/souqYemen/souq1.png";
 import souq2 from "../assets/souqYemen/souq2.png";
