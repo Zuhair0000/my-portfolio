@@ -128,26 +128,6 @@ export default function About() {
             </div>
           </div>
         </TiltCard>
-
-        {/* <div
-          className="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
-          data-aos="fade-up"
-          data-aos-delay="300"
-        >
-          <div className="flex flex-col items-center text-center">
-            <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-teal-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-              <Smartphone className="w-10 h-10 text-white transform transition-transform duration-500  group-hover:rotate-360" />
-            </div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">
-              App Development
-            </h3>
-            <p className="text-gray-600 leading-relaxed">
-              I develop cross-platform mobile applications using React Native,
-              creating native-like experiences for both iOS and Android
-              platforms.
-            </p>
-          </div>
-        </div> */}
       </div>
     </SectionWrap>
   );
