@@ -2,7 +2,7 @@
 
 /* Hide scrollbar but keep scrolling */
 .hide-scrollbar {
-  overflow-x: auto; /* or overflow-y if vertical */
+  overflow-x: auto;
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* IE 10+ */
 }
