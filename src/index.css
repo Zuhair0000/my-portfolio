@@ -1,6 +1,5 @@
 @import "tailwindcss";
 
-/* Hide scrollbar but keep scrolling */
 .hide-scrollbar {
   overflow-x: auto;
   scrollbar-width: none; /* Firefox */
