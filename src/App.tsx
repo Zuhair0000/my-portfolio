@@ -5,17 +5,19 @@ import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import TextParallaxContent from "./components/TextParallaxContent";
+import TechStack from "./components/TechStack.js";
 
 function App() {
   return (
     <div className="min-h-screen">
       <Hero />
+      <About />
       <TextParallaxContent
         image="/first.jpeg"
         heading="My Philosophy"
         subheading="Every line of code tells a story"
       />
-      <About />
+      <TechStack />
       <TextParallaxContent
         image="/s.jpeg"
         heading="The Process"
