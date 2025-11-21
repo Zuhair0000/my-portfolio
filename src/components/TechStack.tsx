@@ -12,7 +12,6 @@ import {
   SiMysql,
   SiDocker,
   SiGithubactions,
-  // SiAmazonaws,
   SiFigma,
   SiPostman,
   SiTensorflow,
