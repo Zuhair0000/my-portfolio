@@ -72,7 +72,7 @@ export default function About() {
     <SectionWrap
       id="about"
       title="What I Do"
-      text="I build responsive and engaging websites, crafting intuitive user interfaces that elevate the user experience. My work combines full-stack web development, ensuring functionality, performance, and visual appeal. With expertise in React.js + Typescript, Node.js, MySQL, and modern tools like Tailwind CSS, Docker, cloud services, and AI / ML experimentation I deliver seamless, scalable digital solutions tailored to real-world needs."
+      text="I build scalable, data-driven web applications that combine strong engineering fundamentals with intelligent features. My work spans full-stack development, system design, and practical machine learning—covering everything from clean user interfaces to backend APIs and deployed ML models. With experience in React.js, TypeScript, Node.js, MySQL, FastAPI, and ML workflows, I focus on delivering reliable, real-world solutions that bridge software engineering and AI."
       className="bg-gray-50"
     >
       <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
@@ -99,8 +99,9 @@ export default function About() {
                 Web Development
               </h3>
               <p className="text-gray-600 leading-relaxed">
-                I build responsive and dynamic websites using modern tools like
-                React.js and TypeScript, delivering seamless user experiences.
+                I build responsive, high-performance web applications using
+                React.js and TypeScript, with a strong focus on usability,
+                maintainability, and clean architecture.
               </p>
             </div>
           </div>
@@ -125,8 +126,8 @@ export default function About() {
               </h3>
               <p className="text-gray-600 leading-relaxed">
                 I streamline deployment pipelines and maintain scalable
-                infrastructure using Docker, Docker Compose, GitHub Actions,
-                AWS, and cloud hosting solutions.
+                infrastructure for web and ML services using Docker, GitHub
+                Actions, AWS, and cloud hosting.
               </p>
             </div>
           </div>
@@ -147,12 +148,13 @@ export default function About() {
                 <Cpu className="w-10 h-10 text-white transform transition-transform duration-500 group-hover:rotate-180" />
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                AI / ML (Learning)
+                Applied Machine Learning
               </h3>
               <p className="text-gray-600 leading-relaxed">
-                I experiment with Machine Learning, Deep Learning, and Model
-                Deployment to expand my skills beyond traditional web
-                development.
+                I design and integrate machine learning solutions such as
+                recommendation systems, time-series forecasting, and predictive
+                models, focusing on real-world deployment using FastAPI and
+                modern ML workflows.
               </p>
             </div>
           </div>

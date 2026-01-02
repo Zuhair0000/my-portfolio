@@ -67,8 +67,8 @@ export default function Hero() {
             ZUHAIR AHMED
           </h1>
           <p className="text-xl md:text-2xl text-white mb-8 max-w-2xl mx-auto leading-relaxed">
-            Full-Stack Developer & UI/UX Designer creating digital experiences
-            that matter
+            Full-Stack Developer crafting intelligent web applications with
+            Machine Learning
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
