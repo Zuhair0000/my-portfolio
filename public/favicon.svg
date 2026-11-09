@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="10" fill="#1F5C4A"/>
+  <!-- Serif "Z" drawn as a path so it doesn't depend on installed fonts -->
+  <path fill="#F6F3EE" d="M17 15h30v4L24.5 45H40.5l2.2-6.5h3.3L45 49H17v-4l22.5-26H25.5l-2 5.5h-3.3L21 15z"/>
+</svg>

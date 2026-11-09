@@ -1,23 +1,187 @@
 @import "tailwindcss";
 
-.hide-scrollbar {
-  overflow-x: auto;
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE 10+ */
+/* Devices with a real hover-capable pointer (hides hover previews on touch). */
+@custom-variant can-hover (@media (hover: hover) and (pointer: fine));
+
+/* ------------------------------------------------------------------
+   Design tokens - "engineering notebook"
+   Raw values live on :root so dark mode can swap them; @theme inline
+   maps them to Tailwind utilities (bg-paper, text-ink, border-rule …).
+   Contrast vs. paper (WCAG): ink 15.6 / 14.3, muted 6.2 / 6.8,
+   accent 7.1 / 7.9 (light / dark).
+------------------------------------------------------------------- */
+:root {
+  --paper: #f6f3ee;
+  --paper-sunk: #eeeae2; /* slightly recessed surface: previews, tables */
+  --ink: #1c1b19;
+  --muted: #5f5a52;
+  --accent: #1f5c4a;
+  --accent-ink: #f6f3ee; /* text on an accent fill */
+  --rule: #dcd6cb;
+  --rule-strong: #bdb5a7;
+
+  color-scheme: light;
 }
 
-.hide-scrollbar::-webkit-scrollbar {
-  display: none;
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #1b1a17;
+    --paper-sunk: #23211d;
+    --ink: #ece8e1;
+    --muted: #a8a196;
+    --accent: #7dbba3;
+    --accent-ink: #1b1a17;
+    --rule: #36332e;
+    --rule-strong: #4f4a43;
+
+    color-scheme: dark;
+  }
 }
 
-/* In your global CSS (e.g. index.css) */
-.clip-hexagon {
-  clip-path: polygon(
-    25% 6.7%,
-    75% 6.7%,
-    100% 50%,
-    75% 93.3%,
-    25% 93.3%,
-    0% 50%
-  );
+@theme inline {
+  --color-paper: var(--paper);
+  --color-paper-sunk: var(--paper-sunk);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-ink: var(--accent-ink);
+  --color-rule: var(--rule);
+  --color-rule-strong: var(--rule-strong);
+
+  --font-serif: "Source Serif 4 Variable", Georgia, "Times New Roman", serif;
+  --font-sans: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+}
+
+@theme {
+  /* Type scale (px): 14 · 16 · 18 · 22 · 30 · 44 · 64 */
+  --text-xs: 0.875rem;
+  --text-xs--line-height: 1.45;
+  --text-sm: 1rem;
+  --text-sm--line-height: 1.55;
+  --text-base: 1.125rem;
+  --text-base--line-height: 1.65;
+  --text-lg: 1.375rem;
+  --text-lg--line-height: 1.4;
+  --text-xl: 1.875rem;
+  --text-xl--line-height: 1.2;
+  --text-2xl: 2.75rem;
+  --text-2xl--line-height: 1.1;
+  --text-3xl: 4rem;
+  --text-3xl--line-height: 1.02;
+
+  /* Layout */
+  --container-page: 1280px;
+  --container-prose: 40rem;
+
+  /* Named vertical rhythm (on top of Tailwind's 4px spacing scale) */
+  --spacing-section: 7rem; /* 112px between home sections */
+  --spacing-section-lg: 9rem; /* 144px on large screens */
+
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* ------------------------------------------------------------------ */
+
+@layer base {
+  html {
+    background: var(--paper);
+    -webkit-text-size-adjust: 100%;
+    scroll-padding-top: 2rem;
+  }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-serif);
+    font-weight: 500;
+    letter-spacing: -0.012em;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  ::selection {
+    background: var(--accent);
+    color: var(--accent-ink);
+  }
+
+  /* Visible keyboard focus everywhere, mouse focus stays quiet. */
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@layer components {
+  /* Numbers, metrics, code: mono with tabular figures. */
+  .num {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum" 1;
+  }
+
+  /* Underlined text link with accent colour. */
+  .link {
+    color: var(--accent);
+    text-decoration-line: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.22em;
+    text-decoration-color: color-mix(in oklab, var(--accent) 45%, transparent);
+    transition: text-decoration-color 150ms ease;
+  }
+  .link:hover {
+    text-decoration-color: var(--accent);
+  }
+}
+
+/* ------------------------------------------------------------------
+   Motion - the hero is the only load animation.
+------------------------------------------------------------------- */
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.rise-in {
+  animation: rise-in 560ms var(--ease-out-quart) both;
+  animation-delay: calc(var(--i, 0) * 80ms);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-delay: 0ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
