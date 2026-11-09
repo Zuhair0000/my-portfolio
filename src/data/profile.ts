@@ -58,30 +58,50 @@ export const experience: ExperienceRole[] = [
 ];
 
 export type Paper = {
-  /** null until known - never invent a title. */
-  title: string | null;
+  title: string;
+  status: "Published" | "In submission";
+  /** In publication order. The owner's name is shown in bold. */
+  authors?: string[];
   venue: string;
+  year?: number;
   role: string;
-  status: string;
-  url: string | null;
   summary?: string;
+  /** Publisher page (e.g. IEEE Xplore). The title links here when set. */
+  url?: string;
+  /** Bare DOI, without the https://doi.org/ prefix. */
+  doi?: string;
 };
+
+/** Highlighted in author lists. */
+export const authorName = "Zuhair Ahmed";
 
 export const research: Paper[] = [
   {
-    // TODO(Zuhair): add the IEEE eSmarTA 2026 paper title and link (DOI / IEEE Xplore URL).
-    title: null,
-    venue: "IEEE eSmarTA 2026",
+    title:
+      "Toward Improving Software Functionality through Refactoring Operations: An Experimental Study",
+    status: "Published",
+    authors: [
+      "Abdullah Almogahed",
+      "Manal Othman",
+      "Mustafa Moosa Qasim",
+      "Said Badreddine",
+      "Zuhair Ahmed",
+      "Mazni Omar",
+    ],
+    venue:
+      "2026 6th International Conference on Emerging Smart Technologies and Applications (eSmarTA), IEEE",
+    year: 2026,
     role: "Corresponding author",
-    status: "Published, conference paper",
-    url: null,
+    summary:
+      "An experimental study of how ten common refactoring operations, applied 453 times to the jEdit system, affect software functionality measured through cohesion, polymorphism, interface size, design size and inheritance.",
+    url: "https://ieeexplore.ieee.org/document/11652314",
+    doi: "10.1109/esmarta70636.2026.11652314",
   },
   {
     title: "Cross-lingual RAG evaluation (Arabic/English)",
+    status: "In submission",
     venue: "Working paper",
     role: "First author",
-    status: "Completed, submission in progress",
-    url: null,
     summary:
       "Tests whether RAG design choices that work in English (chunking, embedding model - bge-m3 and multilingual-e5 - hybrid retrieval, reranking) transfer to Arabic, using matched bilingual WHO health fact sheets, GPT-4o-mini as the generator and an LLM judge from a different vendor.",
   },

@@ -38,8 +38,15 @@ I'm a Software Engineering graduate who works where machine learning meets real 
 
 ## Research
 
-1. Conference paper published at IEEE eSmarTA 2026 - Zuhair is the corresponding author. (Add the paper title and link when available: leave a clearly marked TODO, do not invent a title.)
-2. Cross-lingual RAG evaluation (Arabic/English) - first-author study, completed, submission in progress. Tests whether RAG design choices that work in English (chunking, embedding model - bge-m3 and multilingual-e5 - hybrid retrieval, reranking) transfer to Arabic, using matched bilingual WHO health fact sheets, GPT-4o-mini as the generator and an LLM judge from a different vendor.
+1. Published - "Toward Improving Software Functionality through Refactoring Operations: An Experimental Study".
+   - Authors: Abdullah Almogahed, Manal Othman, Mustafa Moosa Qasim, Said Badreddine, Zuhair Ahmed, Mazni Omar
+   - Venue: 2026 6th International Conference on Emerging Smart Technologies and Applications (eSmarTA), IEEE
+   - Year: 2026
+   - Role: corresponding author
+   - DOI: 10.1109/esmarta70636.2026.11652314
+   - Link: https://ieeexplore.ieee.org/document/11652314
+   - Summary: An experimental study of how ten common refactoring operations, applied 453 times to the jEdit system, affect software functionality measured through cohesion, polymorphism, interface size, design size and inheritance.
+2. In submission - Cross-lingual RAG evaluation (Arabic/English) - first-author study, completed, submission in progress. Tests whether RAG design choices that work in English (chunking, embedding model - bge-m3 and multilingual-e5 - hybrid retrieval, reranking) transfer to Arabic, using matched bilingual WHO health fact sheets, GPT-4o-mini as the generator and an LLM judge from a different vendor.
 
 ## Projects (in this order)
 
