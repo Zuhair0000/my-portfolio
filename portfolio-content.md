@@ -46,7 +46,13 @@ I'm a Software Engineering graduate who works where machine learning meets real 
    - DOI: 10.1109/esmarta70636.2026.11652314
    - Link: https://ieeexplore.ieee.org/document/11652314
    - Summary: An experimental study of how ten common refactoring operations, applied 453 times to the jEdit system, affect software functionality measured through cohesion, polymorphism, interface size, design size and inheritance.
-2. In submission - Cross-lingual RAG evaluation (Arabic/English) - first-author study, completed, submission in progress. Tests whether RAG design choices that work in English (chunking, embedding model - bge-m3 and multilingual-e5 - hybrid retrieval, reranking) transfer to Arabic, using matched bilingual WHO health fact sheets, GPT-4o-mini as the generator and an LLM judge from a different vendor.
+2. Accepted (not yet published, no link or DOI yet) - "Context-Aware Comparative Evaluation of Lightweight Machine Learning Models for Intrusion Detection at the IoT Edge".
+   - Authors: Mohammed Mahir, Abdullah Almogahed, Zuhair Ahmed, Mustafa Moosa Qasim, Samera Obaid Barraood, Said Badreddine
+   - Venue: The 2nd International Conference on Emerging Systems and Advanced Technology (ICoESAT 2026), Artificial Intelligence and Data Science track
+   - Year: 2026
+   - Role: co-author
+   - Summary: Compares five classical ML models for 15-class intrusion detection on the Edge-IIoT dataset, using SMOTE and macro F1 with 5-fold stratified cross-validation; a single Decision Tree matched the ensembles (macro F1 about 0.967) using only 39 KB of memory, against 6.6 MB for Random Forest.
+3. In submission - Cross-lingual RAG evaluation (Arabic/English) - first-author study, completed, submission in progress. Tests whether RAG design choices that work in English (chunking, embedding model - bge-m3 and multilingual-e5 - hybrid retrieval, reranking) transfer to Arabic, using matched bilingual WHO health fact sheets, GPT-4o-mini as the generator and an LLM judge from a different vendor.
 
 ## Projects (in this order)
 

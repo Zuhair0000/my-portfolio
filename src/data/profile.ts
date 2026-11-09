@@ -59,7 +59,7 @@ export const experience: ExperienceRole[] = [
 
 export type Paper = {
   title: string;
-  status: "Published" | "In submission";
+  status: "Published" | "Accepted" | "In submission";
   /** In publication order. The owner's name is shown in bold. */
   authors?: string[];
   venue: string;
@@ -96,6 +96,25 @@ export const research: Paper[] = [
       "An experimental study of how ten common refactoring operations, applied 453 times to the jEdit system, affect software functionality measured through cohesion, polymorphism, interface size, design size and inheritance.",
     url: "https://ieeexplore.ieee.org/document/11652314",
     doi: "10.1109/esmarta70636.2026.11652314",
+  },
+  {
+    title:
+      "Context-Aware Comparative Evaluation of Lightweight Machine Learning Models for Intrusion Detection at the IoT Edge",
+    status: "Accepted",
+    authors: [
+      "Mohammed Mahir",
+      "Abdullah Almogahed",
+      "Zuhair Ahmed",
+      "Mustafa Moosa Qasim",
+      "Samera Obaid Barraood",
+      "Said Badreddine",
+    ],
+    venue:
+      "The 2nd International Conference on Emerging Systems and Advanced Technology (ICoESAT 2026), Artificial Intelligence and Data Science track",
+    year: 2026,
+    role: "Co-author",
+    summary:
+      "Compares five classical ML models for 15-class intrusion detection on the Edge-IIoT dataset, using SMOTE and macro F1 with 5-fold stratified cross-validation; a single Decision Tree matched the ensembles (macro F1 about 0.967) using only 39 KB of memory, against 6.6 MB for Random Forest.",
   },
   {
     title: "Cross-lingual RAG evaluation (Arabic/English)",
