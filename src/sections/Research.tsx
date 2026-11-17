@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import { authorName, research, type Paper } from "../data/profile";
+import { authorNames, research, type Paper } from "../data/profile";
 import { Section } from "../components/SectionHeading";
 
 function Authors({ authors }: { authors: string[] }) {
@@ -8,7 +8,7 @@ function Authors({ authors }: { authors: string[] }) {
       {authors.map((name, i) => (
         <Fragment key={name}>
           {i > 0 && ", "}
-          {name === authorName ? <strong className="font-semibold">{name}</strong> : name}
+          {authorNames.includes(name) ? <strong className="font-semibold">{name}</strong> : name}
         </Fragment>
       ))}
     </p>
@@ -30,7 +30,7 @@ export function Research() {
     <Section n="03" label="Research" id="research">
       <ol className="max-w-prose space-y-10">
         {research.map((paper, i) => (
-          <li key={paper.title} className="grid grid-cols-[2.25rem_minmax(0,1fr)] gap-x-3">
+          <li key={paper.title} id={paper.id} className="grid grid-cols-[2.25rem_minmax(0,1fr)] gap-x-3">
             <span className="pt-[0.3rem] text-xs tabular-nums text-muted">[{i + 1}]</span>
             <div>
               <p className="text-xs text-muted">{paper.status}</p>

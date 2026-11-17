@@ -58,6 +58,8 @@ export const experience: ExperienceRole[] = [
 ];
 
 export type Paper = {
+  /** Optional anchor id, so other pages can link to this entry (/#<id>). */
+  id?: string;
   title: string;
   status: "Published" | "Accepted" | "In submission";
   /** In publication order. The owner's name is shown in bold. */
@@ -72,8 +74,8 @@ export type Paper = {
   doi?: string;
 };
 
-/** Highlighted in author lists. */
-export const authorName = "Zuhair Ahmed";
+/** Highlighted in author lists (the name appears in more than one form across papers). */
+export const authorNames: readonly string[] = ["Zuhair Ahmed", "Zuhair Ahmed Mohammed"];
 
 export const research: Paper[] = [
   {
@@ -96,6 +98,19 @@ export const research: Paper[] = [
       "An experimental study of how ten common refactoring operations, applied 453 times to the jEdit system, affect software functionality measured through cohesion, polymorphism, interface size, design size and inheritance.",
     url: "https://ieeexplore.ieee.org/document/11652314",
     doi: "10.1109/esmarta70636.2026.11652314",
+  },
+  {
+    id: "paper-souqyemen",
+    title:
+      "SouqYemen: A Localized E-Commerce Marketplace for Small Businesses in Yemen",
+    status: "Accepted",
+    authors: ["Zuhair Ahmed Mohammed", "Abdullah Abdurahman Mohamed Ahmed"],
+    venue:
+      "Applied Information Technology and Computer Science (AITCS), Universiti Tun Hussein Onn Malaysia",
+    year: 2026,
+    role: "First author",
+    summary:
+      "Design and development of a localized web marketplace for small businesses in Yemen, built from requirements gathered in a survey of Yemeni customers and vendors and validated through functional and user acceptance testing.",
   },
   {
     title:

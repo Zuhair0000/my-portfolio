@@ -50,6 +50,8 @@ export type Project = {
   };
   tradeoffs?: string[];
   next?: string[];
+  /** `id` of a paper in profile.ts `research` about this project; adds a Research block. */
+  paper?: string;
 
   /** First screenshot = index preview + case-study hero image. */
   screenshots: Screenshot[];
@@ -163,6 +165,7 @@ export const projects: Project[] = [
       "Hybrid content features.",
       "Real payments.",
     ],
+    paper: "paper-souqyemen",
     screenshots: [
       {
         src: "/projects/souqyemen/1.png",

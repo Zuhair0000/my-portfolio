@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import { Link, useParams } from "react-router-dom";
 import { getProject, projectNumber, projects, type Project } from "../data/projects";
-import { profile } from "../data/profile";
+import { profile, research } from "../data/profile";
 import { usePageMeta } from "../lib/usePageMeta";
 import { Figure } from "../components/Figure";
 import { DataPanel } from "../components/DataPanel";
@@ -22,6 +22,7 @@ function CaseStudyBody({ project: p, index, prev, next }: BodyProps) {
   usePageMeta(`${p.title} · ${profile.name}`, `${p.summary} Case study by ${profile.name}, ${profile.role}.`);
 
   const [hero, ...rest] = p.screenshots;
+  const paper = p.paper ? research.find((r) => r.id === p.paper) : undefined;
 
   return (
     <article className="mx-auto max-w-page px-5 sm:px-8">
@@ -98,6 +99,22 @@ function CaseStudyBody({ project: p, index, prev, next }: BodyProps) {
         {p.next && (
           <Block title="What I’d improve next">
             <BulletList items={p.next} />
+          </Block>
+        )}
+
+        {paper && (
+          <Block title="Research">
+            <p className="text-base">
+              {paper.status} paper:{" "}
+              <Link to={{ pathname: "/", hash: `#${paper.id}` }} className="link">
+                {paper.title}
+              </Link>
+              <span className="text-muted">
+                {" "}
+                ({paper.venue}
+                {paper.year && <>, <span className="num">{paper.year}</span></>})
+              </span>
+            </p>
           </Block>
         )}
 
